@@ -1,0 +1,42 @@
+<div class="page-login">
+  <div class="ui centered grid container">
+
+    <div class="nine wide column">
+      <ng-container *ngIf="formControls.isHeaderRequired">
+      <div class="ui icon message" [ngClass]="{'success': signInForm.valid == true}">
+        <i class="lock icon"></i>
+        <div class="content">
+          <div class="header">
+           {{formControls.headerText}}
+          </div>
+          <p>{{formControls.subHeaderTest}}</p>
+        </div>
+      </div>
+      </ng-container>
+      <div class="ui fluid card">
+        <div class="content">
+          <form class="ui form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <ng-container *ngFor="let control of formControls.controls">
+              <ng-container *ngIf="control.type === 'text' || control.type === 'password'">
+                <div class="field">
+                  <label>{{control.label}}</label>
+                  <input type="{{control.type}}"
+                         placeholder="{{control.placeholder}}"
+                         formControlName="{{control.name}}">
+                </div>
+              </ng-container>
+              <ng-container  *ngIf="control.name === 'button'">
+                <button class="positive ui button">{{control.label}}</button>
+              </ng-container>
+            </ng-container>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+

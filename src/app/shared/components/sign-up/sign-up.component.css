@@ -1,0 +1,12 @@
+#test {
+  width: 300px;
+}
+
+#form-segment {
+  padding-bottom: 22px;
+}
+
+#username, #email, #password {
+  margin-top: 9px;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+<ng-container *ngFor="let item of searchCriteria | keyvalue">
+  <div class="ui floating dropdown labeled icon button">
+    <i class="filter icon"></i>
+    <span class="text">Filter {{item.key | uppercase}}</span>
+    <div class="menu">
+      <div class="ui icon search input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search tags...">
+      </div>
+      <div class="divider"></div>
+      <div class="header">
+        <i class="tags icon"></i>
+        {{item.key | uppercase}}
+      </div>
+      <div class="scrolling menu">
+        <ng-container *ngFor="let val of item.value">
+          <div class="item" (click) ="selectedOption(item.key,val)">
+            <div class="ui green empty circular label"></div>
+            {{val}}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<div class="right menu">
+  <a class="ui item">
+    <button class="ui green   compact labeled icon button" routerLink="/dashboard/create-car">
+      <i class="add icon"></i>
+      Register your car
+    </button>
+  </a>
+</div>

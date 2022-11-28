@@ -1,0 +1,22 @@
+
+<div class="ui two top attached steps">
+  <ng-container *ngFor="let step of stepper">
+  <div class="{{step.active}}" >
+    <i class="truck icon"></i>
+    <div class="content">
+      <div class="title">{{step.title}}</div>
+      <div class="description">{{step.description}}</div>
+    </div>
+  </div>
+
+
+  </ng-container>
+</div>
+
+
+<div class="ui attached segment">
+  <app-sign-in [formControls]="CarDetailsFormControls"  (formControlValues)="OnCarDetailsFormSubmit($event)"></app-sign-in>
+  <hr/>
+  <app-sign-in [formControls]="CarDamagesFormControls" (formControlValues)="OnCarDamagesFormSubmit($event)"></app-sign-in>
+</div>
+

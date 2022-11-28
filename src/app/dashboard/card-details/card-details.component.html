@@ -1,0 +1,60 @@
+<app-search-bar [searchCriteriaData]="searchCriteriaData"
+(selectedFilterOptionsEventEmitter) = "handleSearchCriteria($event)"
+></app-search-bar>
+
+<div class="ui cards" style="margin-top: 5px">
+  <ng-container *ngFor="let car of searchCriteriaData">
+    <div class="card">
+      <div class="ui  segment">
+        <div class="content">
+          <table class="ui celled striped compact table">
+            <tbody>
+            <tr>
+              <td>Brand</td>
+              <td>{{car.brand}}</td>
+            </tr>
+
+            <tr>
+              <td class="center aligned">model</td>
+              <td class="left aligned">{{car.model}}</td>
+            </tr>
+            <tr>
+              <td class="center aligned">KM</td>
+              <td class="left aligned">{{car.km}}</td>
+            </tr>
+
+            <tr>
+              <td class="center aligned">Year</td>
+              <td class="left aligned">{{car.year}}</td>
+            </tr>
+
+
+            <tr>
+              <td class="center aligned">Shift</td>
+              <td class="left aligned">{{car.shift}}</td>
+            </tr>
+
+            <tr>
+              <td class="center aligned">Fuel</td>
+              <td class="left aligned">{{car.fuel}}</td>
+            </tr>
+            <tr>
+              <td class="center aligned">Color</td>
+              <td class="left aligned">{{car.color}}</td>
+            </tr>
+            <tr>
+              <td class="center aligned">Type</td>
+              <td class="left aligned">{{car.type}}</td>
+            </tr>
+            <tr class="center aligned">
+              {{car.e_car?"electric car":"Not an electric car"}}
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
